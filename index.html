@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Aplicación web para la lectura de sonetos clásicos de la literatura española"
+    >
+
+    <title>Lector de sonetos</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script
+        type="module"
+        src="script.js"
+    ></script>
+</head>
+
+<body>
+
+    <header class="cabecera">
+        <h1 class="cabecera__titulo">
+            Lector de sonetos
+        </h1>
+
+        <p class="cabecera__descripcion">
+            Grandes sonetos de la literatura española
+        </p>
+    </header>
+
+    <main class="principal">
+
+        <section
+            class="selector"
+            aria-labelledby="selector-titulo"
+        >
+
+            <h2
+                class="selector__titulo"
+                id="selector-titulo"
+            >
+                Selecciona un soneto
+            </h2>
+
+            <div class="selector__campo">
+
+                <label
+                    class="selector__etiqueta"
+                    for="selector-sonetos"
+                >
+                    Soneto
+                </label>
+
+                <select
+                    class="selector__control"
+                    id="selector-sonetos"
+                >
+                    <option
+                        value=""
+                        selected
+                        disabled
+                    >
+                        Selecciona un soneto
+                    </option>
+                </select>
+
+            </div>
+
+        </section>
+
+        <article
+            class="soneto"
+            id="soneto"
+            aria-live="polite"
+        >
+
+            <header class="soneto__cabecera">
+
+                <h2
+                    class="soneto__titulo"
+                    id="soneto-titulo"
+                >
+                    Selecciona un soneto
+                </h2>
+
+                <p
+                    class="soneto__autor"
+                    id="soneto-autor"
+                ></p>
+
+            </header>
+
+            <section
+                class="soneto__contenido"
+                id="soneto-contenido"
+                aria-label="Texto del soneto"
+            >
+                <p class="soneto__mensaje">
+                    Escoge un soneto para comenzar la lectura.
+                </p>
+            </section>
+
+        </article>
+
+    </main>
+
+    <footer class="pie">
+        <p class="pie__texto">
+            Lector de sonetos
+        </p>
+    </footer>
+
+</body>
+
+</html>
