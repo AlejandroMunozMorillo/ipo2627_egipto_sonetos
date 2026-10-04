@@ -4,39 +4,36 @@ export class SonetoController {
         this.modelo = modelo;
         this.vista = vista;
     }
-
-
     async iniciar() {
+        this.vista.mostrarCargando();
         try {
-            const sonetos = await this.modelo.cargarSonetos();
-
-            this.vista.mostrarOpciones(sonetos);
-
-            this.vista.enlazarSeleccion(
-                (id) => this.seleccionarSoneto(id)
+            const sonetos =
+                await this.modelo.cargarSonetos();
+            this.vista.mostrarOpciones(
+                sonetos
             );
-
+            this.vista.enlazarSeleccion(
+                (id) =>
+                    this.seleccionarSoneto(id)
+            );
         } catch (error) {
             console.error(error);
-
             this.vista.mostrarError(
                 "No se han podido cargar los sonetos."
             );
         }
     }
-
-
     seleccionarSoneto(id) {
-        const soneto = this.modelo.obtenerSoneto(id);
-
+        const soneto =
+            this.modelo.obtenerSoneto(id);
         if (soneto === undefined) {
             this.vista.mostrarError(
                 "No se ha encontrado el soneto seleccionado."
             );
-
             return;
         }
-
-        this.vista.mostrarSoneto(soneto);
+        this.vista.mostrarSoneto(
+            soneto
+        );
     }
 }

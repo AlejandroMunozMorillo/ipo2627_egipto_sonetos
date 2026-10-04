@@ -90,7 +90,15 @@ export class SonetoModel {
             lineaAutor.replace(/^Autor:\s*/i, "")
         );
 
-        const versos = lineas.slice(indiceSoneto + 1);
+        const versos =
+    lineas.slice(indiceSoneto + 1);
+
+
+    if (versos.length !== 14) {
+        throw new Error(
+            `El soneto ${id} no contiene 14 versos`
+    );
+}
 
         return {
             id,

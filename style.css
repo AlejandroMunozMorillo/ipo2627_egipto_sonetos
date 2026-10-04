@@ -1,0 +1,321 @@
+
+:root {
+    --tono: 35;
+
+    --color-fondo: hsl(var(--tono), 35%, 95%);
+    --color-superficie: hsl(var(--tono), 35%, 98%);
+    --color-superficie-secundaria: hsl(var(--tono), 28%, 90%);
+
+    --color-principal: hsl(var(--tono), 45%, 32%);
+    --color-principal-claro: hsl(var(--tono), 38%, 45%);
+    --color-principal-oscuro: hsl(var(--tono), 45%, 20%);
+
+    --color-texto: hsl(var(--tono), 20%, 16%);
+    --color-texto-secundario: hsl(var(--tono), 12%, 40%);
+    --color-borde: hsl(var(--tono), 20%, 78%);
+
+    --fuente-interfaz:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    --fuente-lectura:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    --espacio-xs: 0.5rem;
+    --espacio-s: 1rem;
+    --espacio-m: 1.5rem;
+    --espacio-l: 2rem;
+    --espacio-xl: 3rem;
+    --radio: 0.6rem;
+    --sombra:
+        0 0.4rem 1.2rem
+        hsl(var(--tono), 20%, 20%, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-interfaz);
+    line-height: 1.5;
+}
+
+.cabecera {
+    padding:
+        var(--espacio-l)
+        var(--espacio-m);
+    text-align: center;
+    background-color: var(--color-principal-oscuro);
+    color: var(--color-superficie);
+}
+
+.cabecera__titulo {
+    margin: 0;
+    font-family: var(--fuente-lectura);
+    font-size:
+        clamp(2rem, 5vw, 3.2rem);
+    font-weight: normal;
+    letter-spacing: 0.03em;
+}
+
+.cabecera__descripcion {
+    margin:
+        var(--espacio-xs)
+        0
+        0;
+    color: var(--color-superficie-secundaria);
+    font-size:
+        clamp(0.9rem, 2vw, 1.05rem);
+}
+
+.principal {
+    width: min(92%, 70rem);
+    margin: 0 auto;
+    padding:
+        var(--espacio-xl)
+        0;
+    flex: 1;
+    display: grid;
+    grid-template-columns:
+        minmax(14rem, 19rem)
+        minmax(0, 1fr);
+    gap: var(--espacio-xl);
+    align-items: start;
+}
+
+.selector {
+    padding: var(--espacio-m);
+    background-color:
+        var(--color-superficie-secundaria);
+    border:
+        0.0625rem
+        solid
+        var(--color-borde);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+.selector__titulo {
+    margin:
+        0
+        0
+        var(--espacio-m);
+    color: var(--color-principal-oscuro);
+    font-family: var(--fuente-lectura);
+    font-size: 1.3rem;
+    font-weight: normal;
+}
+.selector__campo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-xs);
+}
+.selector__etiqueta {
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+.selector__control {
+    width: 100%;
+    padding:
+        0.75rem
+        var(--espacio-s);
+    border:
+        0.0625rem
+        solid
+        var(--color-borde);
+    border-radius: 0.4rem;
+    background-color:
+        var(--color-superficie);
+    color:
+        var(--color-texto);
+    font: inherit;
+    cursor: pointer;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+.selector__control:hover {
+    border-color:
+        var(--color-principal-claro);
+}
+.selector__control:focus-visible {
+    outline: none;
+    border-color:
+        var(--color-principal);
+    box-shadow:
+        0 0 0 0.18rem
+        hsl(var(--tono), 40%, 40%, 0.2);
+}
+.selector__control:disabled {
+    cursor: wait;
+
+    opacity: 0.65;
+}
+.soneto {
+    min-height: 30rem;
+    padding:
+        var(--espacio-xl)
+        clamp(
+            var(--espacio-m),
+            5vw,
+            var(--espacio-xl)
+        );
+    background-color:
+        var(--color-superficie);
+    border:
+        0.0625rem
+        solid
+        var(--color-borde);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+.soneto__cabecera {
+    margin-bottom: var(--espacio-l);
+    padding-bottom: var(--espacio-m);
+    text-align: center;
+    border-bottom:
+        0.0625rem
+        solid
+        var(--color-borde);
+}
+.soneto__titulo {
+    margin: 0;
+    color:
+        var(--color-principal-oscuro);
+    font-family:
+        var(--fuente-lectura);
+    font-size:
+        clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: normal;
+}
+.soneto__autor {
+    margin:
+        var(--espacio-xs)
+        0
+        0;
+    color:
+        var(--color-texto-secundario);
+    font-family:
+        var(--fuente-lectura);
+    font-size: 1.05rem;
+    font-style: italic;
+}
+.soneto__contenido {
+    max-width: 40rem;
+    margin: 0 auto;
+    color: var(--color-texto);
+    font-family:
+        var(--fuente-lectura);
+
+    font-size:
+        clamp(1rem, 2vw, 1.15rem);
+
+    line-height: 1.75;
+}
+.soneto__estrofa {
+    margin:
+        0
+        0
+        var(--espacio-m);
+}
+.soneto__estrofa:last-child {
+    margin-bottom: 0;
+}
+.soneto__verso {
+    display: block;
+}
+.soneto__mensaje {
+    margin:
+        var(--espacio-xl)
+        auto;
+    color:
+        var(--color-texto-secundario);
+
+    text-align: center;
+    font-style: italic;
+}
+.pie {
+    padding:
+        var(--espacio-m);
+
+    background-color:
+        var(--color-principal-oscuro);
+
+    color:
+        var(--color-superficie-secundaria);
+
+    text-align: center;
+}
+.pie__texto {
+    margin: 0;
+    font-size: 0.85rem;
+}
+::selection {
+    background-color:
+        var(--color-principal);
+    color:
+        var(--color-superficie);
+}
+@media (max-width: 50rem) {
+    .principal {
+        width: min(92%, 42rem);
+
+        grid-template-columns: 1fr;
+
+        gap: var(--espacio-l);
+
+        padding:
+            var(--espacio-l)
+            0;
+    }
+    .selector {
+        position: static;
+    }
+    .soneto {
+        min-height: auto;
+        padding:
+            var(--espacio-l)
+            var(--espacio-m);
+    }
+}
+
+@media (max-width: 30rem) {
+    .cabecera {
+        padding:
+            var(--espacio-m)
+            var(--espacio-s);
+    }
+    .principal {
+        width: 94%;
+    }
+    .selector,
+    .soneto {
+        border-radius: 0.4rem;
+    }
+    .soneto__contenido {
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+        scroll-behavior: auto;
+        transition: none;
+    }
+}
